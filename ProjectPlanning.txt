@@ -1,0 +1,45 @@
+-------------- Main Idea --------------
+
+- Use Pokeapi -> https://pokeapi.co/
+- Pokeapi is an Api which returns information about Pokemon games.
+- The Idea is to fetch several Pokemon with their information from the API.
+- Then Create a base class from the information for each Pokemon
+- Make a Page for each pokemon
+
+-------------- Index Page Information --------------
+
+Information I want to display about each pokemon in the index page.
+
+- Name
+- Picture or Sprite
+- ID
+- Types
+
+-------------- Pokemon Page Information --------------
+
+Information I want to Display about each pokemon:
+
+- Name
+- Picture or Sprite
+- ID
+- Types
+- Regions
+- Movements
+- Evolutions
+
+-------------- Development Planning --------------
+
+1. Learn How PokeAPI works.
+2. Get To Parse de necessary information into a JSON format
+3. Create a Pokemon class to store all the necessary information
+4. Create a base HTML page with TS.
+5. Add The list of Pokemon to that Page.
+6. Create a link to each pokemon page.
+7. Create an HTML page using TS for each Pokemon.
+8. Add style to the main Page.
+9. Add styles to the Pokemon Page.
+
+
+-------------- Things that can be added in the future --------------
+
+- Filter to search pokemon in the index page (by type, by region, by movements, etc)
