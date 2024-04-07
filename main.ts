@@ -16,8 +16,8 @@ const PokemonURLS = await loadPokemonURLS(100);
 for(let i = 0; i < PokemonURLS.length; i++)
 {
     const Pokemons = await loadPokemons(PokemonURLS[i]);
+    console.log(Pokemons);
 }
-
 
 //console.log(PokemonURLS);
 //console.log(Pokemons);
