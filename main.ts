@@ -7,19 +7,24 @@ const html = render(users);
 await writeFile('users.html', html); */
 
 import { writeFile } from "fs/promises";
-import { loadPokemonURLS } from "./pokemons.js";
+import { Pokemon, loadPokemonURLS } from "./pokemons.js";
 import { loadPokemons } from "./pokemons.js";
+import { render } from "./render.js";
 
 
-const PokemonURLS = await loadPokemonURLS(100);
+const PokemonURLS = await loadPokemonURLS(10);
+
+var Pokemons = [];
 
 for(let i = 0; i < PokemonURLS.length; i++)
 {
-    const Pokemons = await loadPokemons(PokemonURLS[i]);
-    console.log(Pokemons);
+    Pokemons.push(await loadPokemons(PokemonURLS[i]));
 }
+console.log(Pokemons);
 
+
+const html = render(Pokemons);
+await writeFile('index.html', html);
 //console.log(PokemonURLS);
 //console.log(Pokemons);
-//const html = render(PokemonURLS);
-//await writeFile('index.html', html);
+//const html = render(Pokemons);

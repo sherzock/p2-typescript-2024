@@ -1,7 +1,7 @@
 export class Pokemon {
   constructor(
     public name: String,
-    public order: number,
+    public id: number,
     public weight: number,
     public types: Array<String>,
     public spriteURL: String
@@ -19,7 +19,7 @@ export const loadPokemons = async (PokemonsAPIURLs: String) => {
       for (let i = 0; i < data.types.length; i++)
         Poketypes.push(data.types[i].type.name);
 
-      Pokemons.push(new Pokemon(data.name, data.order, data.weight, Poketypes, data.sprites.front_default));
+      Pokemons.push(new Pokemon(data.name, data.id, data.weight, Poketypes, data.sprites.front_default));
     });
   return Pokemons;
 };
