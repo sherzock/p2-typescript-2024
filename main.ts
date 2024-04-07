@@ -8,9 +8,18 @@ await writeFile('users.html', html); */
 
 import { writeFile } from "fs/promises";
 import { loadPokemonURLS } from "./pokemons.js";
+import { loadPokemons } from "./pokemons.js";
 
-const PokemonURLS = await loadPokemonURLS(100000);
 
-console.log(PokemonURLS);
+const PokemonURLS = await loadPokemonURLS(100);
+
+for(let i = 0; i < PokemonURLS.length; i++)
+{
+    const Pokemons = await loadPokemons(PokemonURLS[i]);
+}
+
+
+//console.log(PokemonURLS);
+//console.log(Pokemons);
 //const html = render(PokemonURLS);
 //await writeFile('index.html', html);
