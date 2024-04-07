@@ -46,7 +46,7 @@
         public ID: number,
     ) {}
 
-    export const loadPokemons = async (n:number) => {
+    /*export const loadPokemons = async (n:number) => {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=1${n}&offset=0.`);
         const { results } = (await response.json()) as { results: any[] };
         const pokemons: Array<Pokemon> = [];
@@ -54,5 +54,16 @@
             pokemons.push(new Pokemon(name, ID));
         }
         return pokemons;
-    }
+    }*/
+
   };
+
+  export const loadPokemonURLS = async (n:number) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=1${n}&offset=0.`);
+    const { results } = (await response.json()) as { results: any[] }; 
+    const PokemonsAPIURLS: Array<String> = [];
+    for(const { url } of results ) {
+        PokemonsAPIURLS.push(url);
+    }
+    return PokemonsAPIURLS;
+}
