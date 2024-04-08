@@ -42,7 +42,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
     <img src="${Pokemon.spriteURL}" />
     <div class="data">
       <div class="name">${Pokemon.name}</div>
-      <div class="email">${Pokemon.order}</div>
+      <div class="email">${Pokemon.id}</div>
     </div>
   </div>`;
   }

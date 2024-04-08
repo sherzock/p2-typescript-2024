@@ -14,17 +14,17 @@ import { render } from "./render.js";
 
 const PokemonURLS = await loadPokemonURLS(10);
 
-var Pokemons = [];
+//let Pokemons = [];
 
 for(let i = 0; i < PokemonURLS.length; i++)
 {
-    Pokemons.push(await loadPokemons(PokemonURLS[i]));
+   let Pokemons = await loadPokemons(PokemonURLS[i]);
+   console.log(Pokemons);
+   const html = render(Pokemons);
+   await writeFile('index.html', html);
 }
-console.log(Pokemons);
 
 
-const html = render(Pokemons);
-await writeFile('index.html', html);
 //console.log(PokemonURLS);
 //console.log(Pokemons);
 //const html = render(Pokemons);
