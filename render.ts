@@ -17,7 +17,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
     <img src="${Pokemon.spriteURL}" />
     <div class="data">
       <div class="name">${Pokemon.name}</div>
-      <div class="email">${Pokemon.id}</div>
+      <div class="id">${Pokemon.id}</div>
     </div>
   </div>`;
   }
@@ -29,7 +29,9 @@ export const render = (pokemons: Array<Pokemon>) => {
 <html>
   ${head("Pokemon List")}
   <body>
-    ${renderPokemons(pokemons)}
+    <div class= "item">
+      ${renderPokemons(pokemons)}
+    </div>
   </body>
 </html>`;
 };
