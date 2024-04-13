@@ -39,6 +39,8 @@ export const render = (pokemons: Array<Pokemon>) => {
     <div class= "item">
       ${renderPokemons(pokemons)}
     </div>
+    <footer>
+    </footer>
   </body>
 </html>`;
 };

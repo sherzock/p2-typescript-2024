@@ -23,6 +23,12 @@ header {
     padding: 4rem;
 }
 
+footer {
+    background-image: linear-gradient(rgba(255,255,255,0), red);
+    padding: 4rem;
+    padding-top: 20rem;
+}
+
 a {
     text-decoration: none;
 }
