@@ -12,7 +12,7 @@ import { loadPokemons } from "./pokemons.js";
 import { render } from "./render.js";
 
 
-const PokemonURLS = await loadPokemonURLS(10);
+const PokemonURLS = await loadPokemonURLS(100);
 
 //let Pokemons = [];
 
