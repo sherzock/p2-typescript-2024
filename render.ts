@@ -1,3 +1,4 @@
+import { writeFile } from "fs";
 import {Pokemon} from "./pokemons.js";
 
 const head = (title: string) => `
@@ -51,10 +52,34 @@ const renderTypes = (pokemon: Pokemon) => {
   {
     console.log(pokemon.types[i]);
     html += `
-    <span class="${pokemon.types[i]}">${pokemon.types[i]}</span>`;
+    <div class="typeMargin ${pokemon.types[i]}">${pokemon.types[i]}</div>`;
   }
   html += "</div>";
   return html;
 };
 
 
+export const writePokemonPage = (pokemon: Pokemon) => {
+    let html = `
+    <html>
+      ${head(Pokemon.name.toString())}
+      <body>
+        <header>
+          <div class="logo">
+            <img src="imgs/logo.svg"/>
+          </div>
+        </header>
+        <div class= "item">
+          ${renderPokemonInfo(pokemon)}
+        </div>
+        <footer>
+        </footer>
+      </body>
+    </html>
+    `;
+    return html;
+};
+
+const renderPokemonInfo = (pokemon: Pokemon) => {
+  
+}
