@@ -15,7 +15,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
 
   for(const Pokemon of Pokemons) {
     html +=`
-    <a class="pokemon" href="index.html">
+    <a class="pokemon" href="PokemonPages/${Pokemon.name}.html">
         <img src="${Pokemon.spriteURL}" />
         <div class="data">
           <div class="name">${Pokemon.name}</div>
@@ -81,5 +81,5 @@ export const writePokemonPage = (pokemon: Pokemon) => {
 };
 
 const renderPokemonInfo = (pokemon: Pokemon) => {
-  
+
 }
