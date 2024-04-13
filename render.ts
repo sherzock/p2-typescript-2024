@@ -13,14 +13,15 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
   let html = "";
 
   for(const Pokemon of Pokemons) {
-    html +=`<div class="pokemon">
-    <img src="${Pokemon.spriteURL}" />
-    <div class="data">
-      <div class="name">${Pokemon.name}</div>
-      <div class="id">Id: Nª${Pokemon.id}</div>
-      ${renderTypes(Pokemon)}
-    </div>
-  </div>`;
+    html +=`
+    <a class="pokemon" href="index.html">
+        <img src="${Pokemon.spriteURL}" />
+        <div class="data">
+          <div class="name">${Pokemon.name}</div>
+          <div class="id">Id: Nª${Pokemon.id}</div>
+          ${renderTypes(Pokemon)}
+        </div>
+    </a>`;
   }
 return html;
 }
