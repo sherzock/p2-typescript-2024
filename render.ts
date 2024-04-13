@@ -40,12 +40,14 @@ export const render = (pokemons: Array<Pokemon>) => {
 };
 
 const renderTypes = (pokemon: Pokemon) => {
-  let html = "";
+  let html = `<div class="types"> `;
   for(let i=0; i < pokemon.types.length; i++)
   {
     console.log(pokemon.types[i]);
-    html += `<div class="types ${pokemon.types[i]}">${pokemon.types[i]}</div>`;
+    html += `
+    <span class="${pokemon.types[i]}">${pokemon.types[i]}</span>`;
   }
+  html += "</div>";
   return html;
 };
 

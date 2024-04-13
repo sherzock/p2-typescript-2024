@@ -38,3 +38,83 @@ body {
 .pokemon .weight {
     font-family: monospace;
   }
+
+
+  /*Pokemon Types colors*/
+
+  .normal {
+    background-color: #ccc9aa;
+  }
+
+  .fighting {
+    background-color: #e8121a;
+  }
+
+  .flying {
+    background-color: #5eb9b4;
+  }
+
+  .poison {
+    background-color: #a719d7;
+  }
+
+  .ground {
+    background-color: #e2d15b;
+  }
+
+  .rock {
+    background-color: #786b3f;
+  }
+
+  .bug {
+    background-color: #bddd6e;
+  }
+
+  .steel {
+    background-color: #7b8e8a;
+  }
+
+  .fire {
+    background-color: #f67e0d;
+  }
+
+  .water {
+    background-color: #0a79be;
+  }
+
+  .grass {
+    background-color: #3f9609;
+  }
+
+  .electric {
+    background-color: #fffa25;
+  }
+
+  .psychic {
+    background-color: #ed0f64;
+  }
+
+  .ice {
+    background-color: #1a94a3;
+  }
+
+  .dragon {
+    background-color: #8b56fe;
+  }
+
+  .dark {
+    background-color: #604733;
+  }
+
+  .fairy {
+    background-color: #ff9fc2;
+  }
+
+  .unknown {
+    background-color: white;
+  }
+
+  .shadow {
+    background-color: grey;
+  }
+
