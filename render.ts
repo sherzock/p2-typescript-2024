@@ -18,8 +18,6 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
     <div class="data">
       <div class="name">${Pokemon.name}</div>
       <div class="id">Id: Nª${Pokemon.id}</div>
-      <div class="wight">Weight: ${Pokemon.weight}</div>
-      <div class="height"></div>
       ${renderTypes(Pokemon)}
     </div>
   </div>`;
@@ -32,9 +30,11 @@ export const render = (pokemons: Array<Pokemon>) => {
 <html>
   ${head("Pokemon List")}
   <body>
-    <div class="logo">
-      <img src"imgs/logo.png"/>
-    </div>
+    <header>
+      <div class="logo">
+        <img src="imgs/logo.svg"/>
+      </div>
+    </header>
     <div class= "item">
       ${renderPokemons(pokemons)}
     </div>

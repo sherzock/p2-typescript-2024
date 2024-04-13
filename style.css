@@ -3,6 +3,11 @@ body {
   padding: 0;
 }
 
+header {
+    background-image: linear-gradient(red, rgba(255,255,255,0));
+    padding: 4rem;
+}
+
 .item {
     display: flex;
     flex-wrap: wrap;
