@@ -32,6 +32,9 @@ export const render = (pokemons: Array<Pokemon>) => {
 <html>
   ${head("Pokemon List")}
   <body>
+    <div class="logo">
+      <img src"imgs/logo.png"/>
+    </div>
     <div class= "item">
       ${renderPokemons(pokemons)}
     </div>

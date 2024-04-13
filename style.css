@@ -40,7 +40,23 @@ body {
   }
 
 
-  /*Pokemon Types colors*/
+  /* Logo */
+
+  .logo {
+    margin: 4rem 2rem;
+    justify-content: center;
+  }
+
+  .logo img{
+    height: 15rem;
+    width: auto;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Pokemon Types colors */
 
   .types {
     color: white;
