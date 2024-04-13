@@ -42,6 +42,11 @@ body {
 
   /*Pokemon Types colors*/
 
+  .types {
+    color: white;
+    text-align: center;
+  }
+
   .normal {
     background-color: #ccc9aa;
   }
