@@ -1,6 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  background: repeating-linear-gradient(
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
 }
 
 header {
@@ -11,8 +17,7 @@ header {
 .item {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: center;   
 }
 
 .pokemon {
@@ -25,6 +30,7 @@ header {
   padding: 0.4rem;
   border: 0.3rem solid #3d7dca;
   box-shadow: 5px 5px 10px 2px rgba(226, 216, 216, 0.8);
+  background-color: white; 
 }
 
 .pokemon img {
