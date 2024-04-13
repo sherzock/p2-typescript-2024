@@ -17,7 +17,10 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
     <img src="${Pokemon.spriteURL}" />
     <div class="data">
       <div class="name">${Pokemon.name}</div>
-      <div class="id">${Pokemon.id}</div>
+      <div class="id">Id: Nª${Pokemon.id}</div>
+      <div class="wight">Weight: ${Pokemon.weight}</div>
+      <div class="height"></div>
+      ${renderTypes(Pokemon)}
     </div>
   </div>`;
   }
@@ -35,3 +38,15 @@ export const render = (pokemons: Array<Pokemon>) => {
   </body>
 </html>`;
 };
+
+const renderTypes = (pokemon: Pokemon) => {
+  let html = "";
+  for(let i=0; i < pokemon.types.length; i++)
+  {
+    console.log(pokemon.types[i]);
+    html += `<div class="types ${pokemon.types[i]}">${pokemon.types[i]}</div>`;
+  }
+  return html;
+};
+
+

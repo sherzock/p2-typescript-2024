@@ -12,6 +12,7 @@ body {
 
 .pokemon {
   width: 20rem;
+  margin: 1rem;
   font-family: sans-serif;
   display: flex;
   flex-direction: row;
@@ -33,3 +34,7 @@ body {
 .pokemon .id {
   font-family: monospace;
 }
+
+.pokemon .weight {
+    font-family: monospace;
+  }
