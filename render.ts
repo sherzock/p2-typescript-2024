@@ -40,7 +40,7 @@ export const render = (pokemons: Array<Pokemon>) => {
     <div class="filter">
       <label for="selection">Filter:</label>
 
-      <select name="Types" id="selection">
+      <select name="Types" id="selection" onchange="filterTypes()">
         <option value="all">All</option>
         <option value="normal">Normal</option>
         <option value="fighting">Fighting</option>
@@ -63,9 +63,15 @@ export const render = (pokemons: Array<Pokemon>) => {
         <option value="unknown">Unknown</option>
     </select>
     <script>
-      let dropdownList = document.getElementById('selection');
-      dropdownList.onchange = (ev) =>{
-        let selecetedIndex = dropdownList.selectedIndex;
+      let filterTypes = () =>{
+        let element = document.getElementById("selection");
+        let type = element.options[element.selectedIndex].text;
+        let itemToShow = document.getElementsByClassName(type);
+        console.log(itemToShow);
+        for(let i = 0; i < itemToShow.length; i++)
+        {
+            itemToShow[i].style.display = 'none';
+        }
     }
     </script>
     </div>
