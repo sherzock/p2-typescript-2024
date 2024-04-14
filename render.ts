@@ -1,6 +1,9 @@
 import { writeFile } from "fs";
-import {Pokemon} from "./pokemons.js";
+import { Pokemon } from "./pokemons.js";
+import { capitalizeFirstLetter } from "./helper.js";
+import { padNumber } from "./helper.js";
 
+//This function renders the Head of the html page
 const head = (title: string) => `
 <head>
   <meta charset="UTF-8">
@@ -10,12 +13,15 @@ const head = (title: string) => `
   <title>${title}</title>
 </head>`;
 
+//This functions Renders the Pokemon info for the index.html page
 const renderPokemons = (Pokemons: Array<Pokemon>) => {
   let html = "";
 
-  for(const Pokemon of Pokemons) {
-    html +=`
-    <a class="pokemon ${renderTypesClass(Pokemon)}" href="PokemonPages/${Pokemon.name}.html">
+  for (const Pokemon of Pokemons) {
+    html += `
+    <a class="pokemon ${renderTypesClass(Pokemon)}" href="PokemonPages/${
+      Pokemon.name
+    }.html">
         <img src="${Pokemon.spriteURL}" />
         <div class="data">
           <div class="name">${capitalizeFirstLetter(Pokemon.name)}</div>
@@ -24,9 +30,11 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
         </div>
     </a>`;
   }
-return html;
-}
+  return html;
+};
 
+
+//This function renders the index.html page
 export const render = (pokemons: Array<Pokemon>) => {
   return `
 <html>
@@ -98,10 +106,11 @@ export const render = (pokemons: Array<Pokemon>) => {
 </html>`;
 };
 
+
+//THis function renders the types info of a pokemon
 const renderTypes = (pokemon: Pokemon) => {
   let html = `<div class="types"> `;
-  for(let i=0; i < pokemon.types.length; i++)
-  {
+  for (let i = 0; i < pokemon.types.length; i++) {
     html += `
     <div class="typeMargin ${pokemon.types[i]}">${pokemon.types[i]}</div>`;
   }
@@ -109,18 +118,19 @@ const renderTypes = (pokemon: Pokemon) => {
   return html;
 };
 
+//This function renders the types for the name of the class
 const renderTypesClass = (pokemon: Pokemon) => {
-  let html="";
-  for(let i=0; i < pokemon.types.length; i++)
-  {
+  let html = "";
+  for (let i = 0; i < pokemon.types.length; i++) {
     html += ` ${pokemon.types[i]}`;
   }
   return html;
-}
+};
 
 
+//this function renders the each HTML pokemon page
 export const writePokemonPage = (pokemon: Pokemon) => {
-    let html = `
+  let html = `
     <html>
       <head>
         <meta charset="UTF-8">
@@ -140,13 +150,14 @@ export const writePokemonPage = (pokemon: Pokemon) => {
       </body>
     </html>
     `;
-    return html;
+  return html;
 };
 
+//this function renders the information about each pokemon for each pokemon html page
 const renderPokemonInfo = (pokemon: Pokemon) => {
   let html = "";
 
-    html +=`
+  html += `
     <div class="pokemonInfo" href="PokemonPages/${pokemon.name}.html">
         <div class="name">${capitalizeFirstLetter(pokemon.name)}</div>
         <img src="${pokemon.spriteURL}" />
@@ -177,16 +188,4 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
     </div>`;
 
   return html;
-}
-
-
-//Help Functions
-
-//Turns the first letter of a String to a Capital letter
-const capitalizeFirstLetter = (string: String) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-
-//Turns a number to a given length of digits
-const padNumber = (n: number, l: number) => `${n}`.padStart(l, '0');
+};
