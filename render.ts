@@ -18,7 +18,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
     <a class="pokemon" href="PokemonPages/${Pokemon.name}.html">
         <img src="${Pokemon.spriteURL}" />
         <div class="data">
-          <div class="name">${Pokemon.name}</div>
+          <div class="name">${capitalizeFirstLetter(Pokemon.name)}</div>
           <div class="id">Id: Nª${Pokemon.id}</div>
           ${renderTypes(Pokemon)}
         </div>
@@ -88,14 +88,24 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
 
     html +=`
     <div class="pokemonInfo" href="PokemonPages/${pokemon.name}.html">
-        <div class="name">${pokemon.name}</div>
+        <div class="name">${capitalizeFirstLetter(pokemon.name)}</div>
         <img src="${pokemon.spriteURL}" />
-        <div class="data">
+        <div class="dataInfo">
           <div class="id">Id: Nª${pokemon.id}</div>
-          <div class="weight">${pokemon.weight}</div>
-          <div class="height">${pokemon.height}</div>
           ${renderTypes(pokemon)}
-          <input type="button" value="Cry" onclick="play()">
+          <div class="statistics">
+            <table>
+              <tr>
+                <th>Wheight</th>
+                <th>Height</th>
+              </tr>
+              <tr>
+                <td>${pokemon.weight} kg</td>
+                <td>${pokemon.height} cm</td>
+              </tr>
+            </table>
+          </div>
+          <input type="button" class="cry" value="Cry" onclick="play()">
           <audio id="audio" src="${pokemon.cry}"></audio>
           <script>
             function play() {
@@ -107,4 +117,9 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
     </div>`;
 
   return html;
+}
+
+
+const capitalizeFirstLetter = (string: String) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
