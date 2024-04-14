@@ -62,16 +62,20 @@ const renderTypes = (pokemon: Pokemon) => {
 export const writePokemonPage = (pokemon: Pokemon) => {
     let html = `
     <html>
-      ${head(Pokemon.name.toString())}
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style.css" />
+        <title>${pokemon.name}</title>
+      </head>
       <body>
-        <header>
-          <div class="logo">
-            <img src="imgs/logo.svg"/>
-          </div>
-        </header>
         <div class= "item">
           ${renderPokemonInfo(pokemon)}
         </div>
+        <a href="../index.html" div class= "pokemon">
+        Back
+        </a>
         <footer>
         </footer>
       </body>
@@ -81,5 +85,17 @@ export const writePokemonPage = (pokemon: Pokemon) => {
 };
 
 const renderPokemonInfo = (pokemon: Pokemon) => {
+  let html = "";
 
+    html +=`
+    <a class="pokemon" href="PokemonPages/${pokemon.name}.html">
+        <img src="${pokemon.spriteURL}" />
+        <div class="data">
+          <div class="name">${pokemon.name}</div>
+          <div class="id">Id: Nª${pokemon.id}</div>
+          ${renderTypes(pokemon)}
+        </div>
+    </a>`;
+
+  return html;
 }
