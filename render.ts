@@ -15,7 +15,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
 
   for(const Pokemon of Pokemons) {
     html +=`
-    <a class="pokemon" href="PokemonPages/${Pokemon.name}.html">
+    <a class="pokemon ${renderTypesClass(Pokemon)}" href="PokemonPages/${Pokemon.name}.html">
         <img src="${Pokemon.spriteURL}" />
         <div class="data">
           <div class="name">${capitalizeFirstLetter(Pokemon.name)}</div>
@@ -37,6 +37,38 @@ export const render = (pokemons: Array<Pokemon>) => {
         <img src="imgs/logo.svg" draggable="false"/>
       </div>
     </header>
+    <div class="filter">
+      <label for="selection">Filter:</label>
+
+      <select name="Types" id="selection">
+        <option value="all">All</option>
+        <option value="normal">Normal</option>
+        <option value="fighting">Fighting</option>
+        <option value="flying">Flying</option>
+        <option value="poison">Poison</option>
+        <option value="ground">Ground</option>
+        <option value="rock">Rock</option>
+        <option value="bug">Bug</option>
+        <option value="steel">Steel</option>
+        <option value="fire">Fire</option>
+        <option value="water">Water</option>
+        <option value="grass">Grass</option>
+        <option value="electric">Electric</option>
+        <option value="psychic">Psychic</option>
+        <option value="ice">Ice</option>
+        <option value="dragon">Dragon</option>
+        <option value="dark">Dark</option>
+        <option value="fairy">Fairy</option>
+        <option value="shadow">Shadow</option>
+        <option value="unknown">Unknown</option>
+    </select>
+    <script>
+      let dropdownList = document.getElementById('selection');
+      dropdownList.onchange = (ev) =>{
+        let selecetedIndex = dropdownList.selectedIndex;
+    }
+    </script>
+    </div>
     <div class= "item">
       ${renderPokemons(pokemons)}
     </div>
@@ -57,6 +89,15 @@ const renderTypes = (pokemon: Pokemon) => {
   html += "</div>";
   return html;
 };
+
+const renderTypesClass = (pokemon: Pokemon) => {
+  let html="";
+  for(let i=0; i < pokemon.types.length; i++)
+  {
+    html += ` ${pokemon.types[i]}`;
+  }
+  return html;
+}
 
 
 export const writePokemonPage = (pokemon: Pokemon) => {

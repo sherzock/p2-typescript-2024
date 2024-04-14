@@ -1,5 +1,9 @@
 /* Main elements */
 
+div {
+    display: block;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -117,6 +121,12 @@ table, th, td {
 .pokemon .weight {
     font-family: monospace;
   }
+
+.filter {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
 
 
   /* Logo */
