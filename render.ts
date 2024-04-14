@@ -96,7 +96,7 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
           <div class="statistics">
             <table>
               <tr>
-                <th>Wheight</th>
+                <th>Weight</th>
                 <th>Height</th>
               </tr>
               <tr>
