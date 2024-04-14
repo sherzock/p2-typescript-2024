@@ -67,11 +67,11 @@ export const writePokemonPage = (pokemon: Pokemon) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../infostyle.css" />
+        <link rel="stylesheet" href="../style.css" />
         <title>${pokemon.name}</title>
       </head>
       <body>
-        <div class="item">
+        <div class="itemInfo">
           ${renderPokemonInfo(pokemon)}
           <a href="../index.html" div class= "button">
           Back
@@ -87,7 +87,7 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
   let html = "";
 
     html +=`
-    <div class="pokemon" href="PokemonPages/${pokemon.name}.html">
+    <div class="pokemonInfo" href="PokemonPages/${pokemon.name}.html">
         <div class="name">${pokemon.name}</div>
         <img src="${pokemon.spriteURL}" />
         <div class="data">
