@@ -72,7 +72,7 @@ export const render = (pokemons: Array<Pokemon>) => {
         {
           for(let i = 0; i < Pokemons.length; i++)
           {
-            Pokemons[i].style.display = 'flex';
+            Pokemons[i].style.display = '';
           }
         }
         else
@@ -84,7 +84,7 @@ export const render = (pokemons: Array<Pokemon>) => {
           console.log(itemToShow);
           for(let i = 0; i < itemToShow.length; i++)
           {
-              itemToShow[i].style.display = 'flex';
+              itemToShow[i].style.display = '';
           }
         }
     }
