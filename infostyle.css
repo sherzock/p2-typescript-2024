@@ -39,8 +39,8 @@ body {
 }
 
 .pokemon {
-
-  background-color: white;
+  color: white;
+  background-image: linear-gradient(red, #3d7dca);
   border: 0.5rem solid #3d7dca;
   box-shadow: 5px 5px 10px 2px rgba(226, 216, 216, 0.8);
 
