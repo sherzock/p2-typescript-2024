@@ -67,10 +67,25 @@ export const render = (pokemons: Array<Pokemon>) => {
         let element = document.getElementById("selection");
         let type = element.options[element.selectedIndex].text;
         let itemToShow = document.getElementsByClassName(type);
-        console.log(itemToShow);
-        for(let i = 0; i < itemToShow.length; i++)
+        let Pokemons = document.getElementsByClassName('Pokemon');
+        if(type === 'All')
         {
-            itemToShow[i].style.display = 'none';
+          for(let i = 0; i < Pokemons.length; i++)
+          {
+            Pokemons[i].style.display = 'flex';
+          }
+        }
+        else
+        {
+          for(let i = 0; i < Pokemons.length; i++)
+          {
+            Pokemons[i].style.display = 'none';
+          }
+          console.log(itemToShow);
+          for(let i = 0; i < itemToShow.length; i++)
+          {
+              itemToShow[i].style.display = 'flex';
+          }
         }
     }
     </script>

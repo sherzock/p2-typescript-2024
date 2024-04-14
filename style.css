@@ -45,7 +45,7 @@ a:visited {
 
 
 table, th, td {
-    border: 0.2rem solid white;
+    border: 0.15rem solid white;
   }
 
   th, td{
@@ -60,11 +60,12 @@ table, th, td {
   }
 
   input {
+    cursor: pointer;
+    width: 100%;
     color: white;
     font-family: sans-serif;
     background-color: red;
     background-image: linear-gradient(to right, #3d7dca 0%, red 50%, #3d7dca 100%);
-    /*border: 0.2rem solid #3d7dca;*/
     border: rgba(226, 216, 216, 0);
     font-size: 1rem;
     padding: 0.3rem 1rem;
@@ -126,6 +127,7 @@ table, th, td {
     text-align: center;
     color: white;
     font-family: sans-serif;
+    margin-bottom: 2rem;
 }
 
 
@@ -148,6 +150,7 @@ table, th, td {
   /* Pokemon Types colors */
 
   .types {
+    width: 100%;
     color: white;
     text-align: center;
     margin-bottom: 1rem;
@@ -304,6 +307,7 @@ table, th, td {
 
   .dataInfo {
     display: grid;
+    place-items: center;
     grid-template-columns: 1fr 1fr;
     justify-items: space-evenly;
     gap: 2rem;
