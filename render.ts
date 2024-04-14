@@ -81,7 +81,6 @@ export const render = (pokemons: Array<Pokemon>) => {
           {
             Pokemons[i].style.display = 'none';
           }
-          console.log(itemToShow);
           for(let i = 0; i < itemToShow.length; i++)
           {
               itemToShow[i].style.display = '';
@@ -103,7 +102,6 @@ const renderTypes = (pokemon: Pokemon) => {
   let html = `<div class="types"> `;
   for(let i=0; i < pokemon.types.length; i++)
   {
-    console.log(pokemon.types[i]);
     html += `
     <div class="typeMargin ${pokemon.types[i]}">${pokemon.types[i]}</div>`;
   }

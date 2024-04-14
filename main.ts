@@ -7,7 +7,6 @@ import { writePokemonPage } from "./render.js";
 const PokemonURLS = await loadPokemonURLS(100);
 
 let Pokemons = await loadPokemons(PokemonURLS);
-console.log(Pokemons);
 const html = render(Pokemons);
 await writeFile('index.html', html);
 
