@@ -19,7 +19,7 @@ const renderPokemons = (Pokemons: Array<Pokemon>) => {
         <img src="${Pokemon.spriteURL}" />
         <div class="data">
           <div class="name">${capitalizeFirstLetter(Pokemon.name)}</div>
-          <div class="id">Id: Nª${Pokemon.id}</div>
+          <div class="id">Nº ${padNumber(Pokemon.id, 4)}</div>
           ${renderTypes(Pokemon)}
         </div>
     </a>`;
@@ -34,7 +34,7 @@ export const render = (pokemons: Array<Pokemon>) => {
   <body>
     <header>
       <div class="logo">
-        <img src="imgs/logo.svg"/>
+        <img src="imgs/logo.svg" draggable="false"/>
       </div>
     </header>
     <div class= "item">
@@ -91,7 +91,7 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
         <div class="name">${capitalizeFirstLetter(pokemon.name)}</div>
         <img src="${pokemon.spriteURL}" />
         <div class="dataInfo">
-          <div class="id">Id: Nª${pokemon.id}</div>
+          <div class="id"> Nº ${padNumber(pokemon.id, 4)}</div>
           ${renderTypes(pokemon)}
           <div class="statistics">
             <table>
@@ -120,6 +120,13 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
 }
 
 
+//Help Functions
+
+//Turns the first letter of a String to a Capital letter
 const capitalizeFirstLetter = (string: String) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+//Turns a number to a given length of digits
+const padNumber = (n: number, l: number) => `${n}`.padStart(l, '0');
