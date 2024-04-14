@@ -66,18 +66,17 @@ export const writePokemonPage = (pokemon: Pokemon) => {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style.css" />
+
+        <link rel="stylesheet" href="../infostyle.css" />
         <title>${pokemon.name}</title>
       </head>
       <body>
-        <div class= "item">
+        <div class="item">
           ${renderPokemonInfo(pokemon)}
+          <a href="../index.html" div class= "button">
+          Back
+          </a>
         </div>
-        <a href="../index.html" div class= "pokemon">
-        Back
-        </a>
-        <footer>
-        </footer>
       </body>
     </html>
     `;
@@ -88,14 +87,24 @@ const renderPokemonInfo = (pokemon: Pokemon) => {
   let html = "";
 
     html +=`
-    <a class="pokemon" href="PokemonPages/${pokemon.name}.html">
+    <div class="pokemon" href="PokemonPages/${pokemon.name}.html">
+        <div class="name">${pokemon.name}</div>
         <img src="${pokemon.spriteURL}" />
         <div class="data">
-          <div class="name">${pokemon.name}</div>
           <div class="id">Id: Nª${pokemon.id}</div>
+          <div class="weight">${pokemon.weight}</div>
+          <div class="height">${pokemon.height}</div>
           ${renderTypes(pokemon)}
+          <input type="button" value="Cry" onclick="play()">
+          <audio id="audio" src="${pokemon.cry}"></audio>
+          <script>
+            function play() {
+              var audio = document.getElementById("audio");
+              audio.play();
+            }
+          </script>
         </div>
-    </a>`;
+    </div>`;
 
   return html;
 }

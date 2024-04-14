@@ -3,8 +3,10 @@ export class Pokemon {
     public name: String,
     public id: number,
     public weight: number,
+    public height: number,
     public types: Array<String>,
-    public spriteURL: String
+    public spriteURL: String,
+    public cry: string,
   ) {}
 }
 
@@ -23,7 +25,7 @@ export const loadPokemons = async (PokemonsAPIURLs: Array<String>) => {
         for (let i = 0; i < data.types.length; i++)
           Poketypes.push(data.types[i].type.name);
 
-        Pokemons.push(new Pokemon(data.name, data.id, data.weight, Poketypes, data.sprites.front_default));
+        Pokemons.push(new Pokemon(data.name, data.id, data.weight, data.height, Poketypes, data.sprites.front_default, data.cries.latest));
       });
   }
   
@@ -45,3 +47,14 @@ export const loadPokemonURLS = async (n: number) => {
   }
   return PokemonsAPIURLS;
 };
+
+export const playAudio = (pokemon: Pokemon) => {
+    const audio = new Audio(pokemon.cry);
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach(button => {
+    button.addEventListener("click", () => {
+    audio.play();
+  });
+});
+}
